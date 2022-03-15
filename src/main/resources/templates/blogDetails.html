@@ -13,7 +13,7 @@
 
 <main>
 
-    <div> Main
+    <div> Full Text
     </div>
 
     <div class="container mt-50">
@@ -22,8 +22,13 @@
 
             <h3 th:text="${el.title}"/>
             <p th:text="${el.author}"/>
-            <p th:text="${el.shortText}"/>
-            <a th:href="'/blog/' + ${el.id}" class="btn btn-warning"> FullText </a>
+            <p th:text="${el.fullText}"/>
+            <p th:text="${el.views}"/>
+            <a th:href="'/blog/' + ${el.id}+'/edit'" class="btn btn-warning"> Edit </a>
+            <form th:action="'/blog/'+${el.id}+ '/remove'" method="post">
+            <button class="btn btn-warning" type="submit" >Delete</button>
+            </form>
+
 
         </div>
     </div>
